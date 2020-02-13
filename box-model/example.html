@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>TODO</title>
+
+   <style type='text/css'> 
+	    #outer-box {
+         background-color: red;
+         float           : left;
+      }
+      .inner-box {
+         font-size: 10px;
+         font-weight: bold;
+         color: brown;
+         background-color: yellow;
+
+         width  : 180px;
+
+         padding:  40px;
+         border :  10px dashed blue;
+         margin-top   : 10px;
+         margin-left  : 30px;
+         margin-bottom: 40px;
+         margin-right : 20px;
+      }
+   </style>
+
+</head>
+<body>
+
+   Compare with <a href='http://www.adp-gmbh.ch/web/css/margin_border_padding.html'>http://www.adp-gmbh.ch/web/css/margin_border_padding.html</a>
+
+   <p>
+
+      Note the <b>Collapsing of margins between adjaciand <i>horizontal</i> margins!!!</b>.
+
+   <div id='outer-box'>
+
+      <div class='inner-box'>
+       a b c d e f g h i j k l m n o p q r s t u v w x y z a b c d e f g h i j
+       k l m n o p q r s t u v w x y z a b c d e f g h i j k l m n o p q r s t
+       u v w x y z a b c d e f g h i j k l m n o p q r s t u v w x y z a b c d
+       e f g h i j k l m n o p q r s t u v w x y z
+      </div>
+
+
+      <div class='inner-box'>
+       a b c d e f g h i j k l m n o p q r s t u v w x y z a b c d e f g h i j
+       k l m n o p q r s t u v w x y z a b c d e f g h i j k l m n o p q r s t
+       u v w x y z a b c d e f g h i j k l m n o p q r s t u v w x y z a b c d
+       e f g h i j k l m n o p q r s t u v w x y z
+      </div>
+
+   </div>
+
+</body>
+</html>
