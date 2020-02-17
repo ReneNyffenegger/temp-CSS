@@ -8,6 +8,7 @@
 
   var html_cs;
   var body_cs;
+  var bar_cs;
 
   function print_css_values() {
 
@@ -26,8 +27,11 @@
        'html.width/height = ' + html_width + ' * ' + html_height + '<br/>' +
        'body.width/height = ' + body_width + ' * ' + body_height + '<br/>' +
        'html.backgroundColor = ' + html_backgroundColor + '<br/>' +
-       'body.backgroundColor = ' + body_backgroundColor;
-
+       'body.backgroundColor = ' + body_backgroundColor + '<br/>' +
+       'bar.width/height = ' + bar_cs.width + ' * ' + bar_cs.height + '<br/>' +
+       'bar.top = ' + bar_cs.top + '<br/>' +
+       'out.top = ' + out_cs.top;
+ 
   }
 
   function main() {
@@ -37,8 +41,11 @@
 
     html_cs = window.getComputedStyle(document.documentElement);
     body_cs = window.getComputedStyle(document.body           );
+    bar_cs  = window.getComputedStyle(document.getElementById('bar'));
+    out_cs  = window.getComputedStyle(out);
 
 //  document.body.style.backgroundColor = 'yellow';
+    document.body.style.position = 'absolute';
 
     window.onresize = print_css_values;
     print_css_values();
@@ -49,6 +56,10 @@
 </head>
 
 <body onload='main()'>
+
+  <span id='foo'>foo</span>
+  <span id='bar'>bar</span>
+  <span id='baz'>baz</span>
 
 <!--  <div>this is supposed to be a div whose width is more than fivehundred pixels so that it is possible to make the browser narrowr than the width of the text.</div> -->
   <div id='out'>
