@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>TODO</title>
+
+  <script type='text/javascript'>
+
+  var html_cs;
+  var body_cs;
+
+  function print_css_values() {
+
+    var html_position = html_cs.position;
+    var body_position = body_cs.position;
+    var html_width    = html_cs.width;
+    var body_width    = body_cs.width;
+    var html_height   = html_cs.height;
+    var body_height   = body_cs.height;
+    var html_backgroundColor = html_cs.backgroundColor;
+    var body_backgroundColor = body_cs.backgroundColor;
+
+    out.innerHTML = 
+       'html.position = '     + html_position + '<br/>' +
+       'body.position = '     + body_position + '<br/>' +
+       'html.width/height = ' + html_width + ' * ' + html_height + '<br/>' +
+       'body.width/height = ' + body_width + ' * ' + body_height + '<br/>' +
+       'html.backgroundColor = ' + html_backgroundColor + '<br/>' +
+       'body.backgroundColor = ' + body_backgroundColor;
+
+  }
+
+  function main() {
+
+    out = document.getElementById('out');
+//  out.style.float = 'left';
+
+    html_cs = window.getComputedStyle(document.documentElement);
+    body_cs = window.getComputedStyle(document.body           );
+
+//  document.body.style.backgroundColor = 'yellow';
+
+    window.onresize = print_css_values;
+    print_css_values();
+
+  }
+   
+  </script>
+</head>
+
+<body onload='main()'>
+
+<!--  <div>this is supposed to be a div whose width is more than fivehundred pixels so that it is possible to make the browser narrowr than the width of the text.</div> -->
+  <div id='out'>
+  </div>
+
+</body>
+</html>
