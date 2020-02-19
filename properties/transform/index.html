@@ -6,52 +6,81 @@
 
   <style type='text/css'>
 
+    body {margin: 0}
+
     div {
-
-      position        : absolute;
-      width           : 200px;
-      height          :  20px;
-      left            :  10px;
-      top             :  20px;
-      transform-origin:     0px 0px;
-    }
-    /*
-
-      font-size       :   60%;
-
-      transform-origin:  100% 100%;
-      transform-origin: center;
-
-    */
-
-    #b0 {
-      background-color: rgba(240, 230, 250, 100);
+        position        : absolute;
     }
 
-    #b1 {
-      background-color: rgba(250, 240, 230, 100);
-      transform       : 
-                        translate(50px, 80px)
+    .elem {
+        width           :    300px;
+        height          :    180px;
+        left            :     00px;
+        top             :     00px;
+        font-size       :     50px;
+    }
+
+    #c1 {
+        left  : 30px;
+        top   : 30px;
+    }
+
+    #c2 {
+        left  : 630px;
+        top   :  30px;
+    }
+
+    #c1 .elem {
+        background-color: rgba(30%, 40%, 80%, 0.3);
+        border: 2px solid rgba(40%, 50%, 90%, 0.4);
+    }
+
+    #c2 .elem {
+        border: 2px solid rgba(90%, 50%, 40%, 0.4);
+        background-color: rgba(80%, 40%, 30%, 0.3);
+    }
+
+   #a0 {
+    }
+   #a1 {
+      transform       : scale(0.6666)
+                      ;
+    }
+   #a2 {
+      transform       : scale(0.6666) 
+                        translate(150px, 270px)
+                      ;
+    }
+   #a3 {
+      transform       : scale(0.6666) 
+                        translate(150px, 270px)
                         rotate(30deg)
-                        ;
+                      ;
     }
-
-    #b2 {
-      transform-origin: 0px 0px;
-      background-color: rgba(230, 250, 240, 100);
-      transform       : 
+   #a4 {
+      transform       : scale(0.6666) 
+                        translate(150px, 270px)
                         rotate(30deg)
-                        translate(50px, 80px)   ;
+                        translate(-50px,  300px)
+                      ;
     }
 
-    #b3 {
-      background-color: rgba(220, 210, 240, 100);
-      transform       : translate(50px, 80px)   ;
+   #b1 {
+      transform       : translate(-50px, 300px)
+                      ;
     }
-    /*
-                        scale(2)               
-
-    */
+   #b2 {
+      transform       : rotate(30deg)
+                      ;
+    }
+   #b3 {
+      transform       : translate(150px, 270px)
+                      ;
+    }
+   #b4 {
+      transform       : scale(0.6666)
+                      ;
+    }
 
 
   </style>
@@ -60,10 +89,54 @@
 
 <body>
 
-   <div id='b0'>b0: No transform               </div>
-   <div id='b1'>b1: scale first, then translate</div>
-   <div id='b2'>b2: translate first, then scale</div>
-   <div id='b3'>b3: translate only             </div>
+  <div id='c1'>
+
+     <div class='elem' id='a0'>T0</div>
+     <div class='elem' id='a1'>T1</div>
+     <div class='elem' id='a2'>T2</div>
+     <div class='elem' id='a3'>T3</div>
+     <div class='elem' id='a4'>T4</div>
+
+  </div>
+
+  <div id='c2'>
+     
+     <div id='b0'> <div class='elem'>T0</div>
+    </div>
+
+     <div id='b1'>
+     <div id='b0'> <div class='elem'>T1</div>
+    </div>
+    </div>
+
+     <div id='b2'>
+     <div id='b1'>
+     <div id='b0'> <div class='elem'>T2</div>
+    </div>
+    </div>
+    </div>
+
+     <div id='b3'>
+     <div id='b2'>
+     <div id='b1'>
+     <div id='b0'> <div class='elem'>T3</div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+     <div id='b4'>
+     <div id='b3'>
+     <div id='b2'>
+     <div id='b1'>
+     <div id='b0'> <div class='elem'>T4</div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+  </div>
 
 </body>
 </html>
