@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>CSS: transformations</title>
+
+  <style type='text/css'>
+
+    div {
+
+      position        : absolute;
+      width           : 200px;
+      height          :  20px;
+      left            :  10px;
+      top             :  20px;
+      transform-origin:     0px 0px;
+    }
+    /*
+
+      font-size       :   60%;
+
+      transform-origin:  100% 100%;
+      transform-origin: center;
+
+    */
+
+    #b0 {
+      background-color: rgba(240, 230, 250, 100);
+    }
+
+    #b1 {
+      background-color: rgba(250, 240, 230, 100);
+      transform       : 
+                        translate(50px, 80px)
+                        rotate(30deg)
+                        ;
+    }
+
+    #b2 {
+      transform-origin: 0px 0px;
+      background-color: rgba(230, 250, 240, 100);
+      transform       : 
+                        rotate(30deg)
+                        translate(50px, 80px)   ;
+    }
+
+    #b3 {
+      background-color: rgba(220, 210, 240, 100);
+      transform       : translate(50px, 80px)   ;
+    }
+    /*
+                        scale(2)               
+
+    */
+
+
+  </style>
+
+</head>
+
+<body>
+
+   <div id='b0'>b0: No transform               </div>
+   <div id='b1'>b1: scale first, then translate</div>
+   <div id='b2'>b2: translate first, then scale</div>
+   <div id='b3'>b3: translate only             </div>
+
+</body>
+</html>
