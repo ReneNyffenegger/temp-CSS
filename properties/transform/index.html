@@ -8,8 +8,21 @@
 
     body {margin: 0}
 
-    div {
-        position        : absolute;
+    div {                                              /* For simplicitity's sake: */
+        position        : absolute;                    /* Position all divs absolutely */
+    }
+
+    #cont_left,
+    #cont_right {         
+        top             :     30px;
+    }
+
+    #cont_left {
+        left            :     30px;
+    }
+
+    #cont_right {
+        left            :    630px;
     }
 
     .elem {
@@ -20,22 +33,13 @@
         font-size       :     50px;
     }
 
-    #c1 {
-        left  : 30px;
-        top   : 30px;
-    }
 
-    #c2 {
-        left  : 630px;
-        top   :  30px;
-    }
-
-    #c1 .elem {
+    #cont_left .elem {
         background-color: rgba(30%, 40%, 80%, 0.3);
         border: 2px solid rgba(40%, 50%, 90%, 0.4);
     }
 
-    #c2 .elem {
+    #cont_right .elem {
         border: 2px solid rgba(90%, 50%, 40%, 0.4);
         background-color: rgba(80%, 40%, 30%, 0.3);
     }
@@ -54,23 +58,27 @@
    #a3 {
       transform       : scale(0.6666) 
                         translate(150px, 270px)
-                        rotate(30deg)
+                        rotate(25deg)
                       ;
     }
    #a4 {
       transform       : scale(0.6666) 
                         translate(150px, 270px)
-                        rotate(30deg)
+                        rotate(25deg)
                         translate(-50px,  300px)
                       ;
     }
+
+   #cont_right div {                                                /* Transform all divs within  */
+      transform-origin: 150px 90px;                         /* Because  */
+   }
 
    #b1 {
       transform       : translate(-50px, 300px)
                       ;
     }
    #b2 {
-      transform       : rotate(30deg)
+      transform       : rotate(25deg)
                       ;
     }
    #b3 {
@@ -89,7 +97,7 @@
 
 <body>
 
-  <div id='c1'>
+  <div id='cont_left'>
 
      <div class='elem' id='a0'>T0</div>
      <div class='elem' id='a1'>T1</div>
@@ -99,7 +107,7 @@
 
   </div>
 
-  <div id='c2'>
+  <div id='cont_right'>
      
      <div id='b0'> <div class='elem'>T0</div>
     </div>
