@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-  <title>CSS: transformations</title>
+  <title>transform: Observer</title>
 
   <style type='text/css'>
 
@@ -12,64 +12,26 @@
         position        : absolute;                    /* Position all divs absolutely */
     }                                                  /*                              */
 
-    #cont_left,
-    #cont_right {         
+    #container {         
         top             :     30px;
-    }
-
-    #cont_left {
         left            :     30px;
-    }
-
-    #cont_right {
-        left            :    630px;
     }
 
     .elem {
         width           :    300px;
         height          :    180px;
-        left            :     00px;
-        top             :     00px;
         font-size       :     50px;
     }
 
 
-    #cont_left .elem {
-        background-color: rgba(30%, 40%, 80%, 0.3);
-        border: 2px solid rgba(40%, 50%, 90%, 0.4);
-    }
 
-    #cont_right .elem {
+    #container .elem {
         border: 2px solid rgba(90%, 50%, 40%, 0.4);
         background-color: rgba(80%, 40%, 30%, 0.3);
     }
 
-   #a0 {                                                /* Although this selector does not seem to have a transormation, */
-    }                                                   /* there is an implicit one: the transform-origin property.      */
-   #a1 {
-      transform       : scale(0.6666)        
-                      ;
-    }
-   #a2 {
-      transform       : scale(0.6666) 
-                        translate(150px, 270px)
-                      ;
-    }
-   #a3 {
-      transform       : scale(0.6666) 
-                        translate(150px, 270px)
-                        rotate(25deg)
-                      ;
-    }
-   #a4 {
-      transform       : scale(0.6666) 
-                        translate(150px, 270px)
-                        rotate(25deg)
-                        translate(-50px,  300px)
-                      ;
-    }
 
-   #cont_right div {                                        /* Transform all divs within  */
+   #container div {                                        /* Transform all divs within  */
       transform-origin: 150px 90px;                         /* Because                    */
    }
 
@@ -78,7 +40,7 @@
                       ;
     }
    #b2 {
-      transform       : rotate(25deg)
+      transform       : rotate(-25deg)
                       ;
     }
    #b3 {
@@ -97,17 +59,8 @@
 
 <body>
 
-  <div id='cont_left'>
 
-     <div class='elem' id='a0'>T0</div>
-     <div class='elem' id='a1'>T1</div>
-     <div class='elem' id='a2'>T2</div>
-     <div class='elem' id='a3'>T3</div>
-     <div class='elem' id='a4'>T4</div>
-
-  </div>
-
-  <div id='cont_right'>
+  <div id='container'>
      
      <div id='b0'> <div class='elem'>T0</div>
     </div>
