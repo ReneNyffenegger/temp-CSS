@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>z-index</title>
+
+
+  <style type='text/css'> 
+     div {
+       position : absolute;
+     }
+
+     #left, #right {
+        width: 160px;
+     }
+
+     #left {
+        left: 20px;
+     }
+
+     #right {
+        left: 180px;
+     }
+
+     .box {
+       font-size: 40px;
+       width    : 80px;
+       height   : 80px;
+     }
+
+     .d1 {
+       left  : 20px;
+       top   : 30px;
+       background-color: rgba(100%, 60%, 30%, 85%);
+     }
+
+     .d2 {
+       left  : 50px;
+       top   : 60px;
+       background-color: rgba(30%, 100%, 60%, 85%);
+     }
+
+     .d3 {
+       left  : 80px;
+       top   : 90px;
+       background-color: rgba(60%, 30%, 100%, 85%);
+     }
+
+  </style>
+
+  <script type="text/javascript">
+
+   function main() {
+
+     console.log(document.getElementsByTagName('div'));
+
+     for (let d of document.getElementsByTagName('div')) {
+       console.log(d.id + ': ' + window.getComputedStyle(d).zIndex);
+     };
+     
+
+   }
+
+  </script>
+
+</head>
+<body onload='main()'>
+
+  <div id='left'>
+    <div>No <code>z-index</code> assigned</div>
+    <div class='d1 box'>1</div>
+    <div class='d2 box'>2</div>
+    <div class='d3 box'>3</div>
+  </div>
+
+  <div id='right'>
+    <div><code>z-index</code> assigned</div>
+   <div class='d1 box' style='z-index:3'>1</div>
+   <div class='d2 box' style='z-index:1'>2</div>
+   <div class='d3 box' style='z-index:2'>3</div>
+  </div>
+
+</body>
+</html>
